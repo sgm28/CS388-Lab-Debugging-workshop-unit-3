@@ -2,6 +2,7 @@ package com.codepath.debuggingchallenges.activities
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.codepath.debuggingchallenges.R
@@ -15,12 +16,14 @@ class ChangeBackgroundActivity : AppCompatActivity() {
 
     fun onGoClick(view: View?) {
         val mainView = findViewById<View>(android.R.id.content)
-        mainView.setBackgroundColor(nextColor)
+        mainView.setBackgroundColor(Color.RED)
+        Log.i("ChangeBackground", "Started")
     }
 
     private val nextColor: Int
         private get() {
-            val newColor = if (oldColor == Color.BLUE) Color.RED else Color.BLUE
+            val newColor =
+                    if (oldColor == Color.BLUE) Color.RED else Color.BLUE
             oldColor = newColor
             return newColor
         }
